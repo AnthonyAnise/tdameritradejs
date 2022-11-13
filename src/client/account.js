@@ -37,7 +37,7 @@ class TDAccount extends Base {
  * @returns {Promise<any>} The requested account
  */
 TDAccount.prototype.getAccount = function (fields) {
-    return accounts.getAccount.call(this, [this.accountId, fields])
+    return accounts.getAccount.call(this, this.accountId, fields)
 }
 
 /**
@@ -47,7 +47,7 @@ TDAccount.prototype.getAccount = function (fields) {
  * @returns {Promise<any>} The requested account's positions
  */
 TDAccount.prototype.getPositions = function () {
-    return accounts.getPositions.call(this, [this.accountId])
+    return accounts.getPositions.call(this, this.accountId)
 }
 
 /**
@@ -57,7 +57,7 @@ TDAccount.prototype.getPositions = function () {
  * @returns {Promise<any>} The account preferences
  */
 TDAccount.prototype.getPreferences = function () {
-    return accounts.getPreferences.call(this, [this.accountId])
+    return accounts.getPreferences.call(this, this.accountId)
 }
 
 /**
@@ -72,7 +72,7 @@ TDAccount.prototype.getPreferences = function () {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.updatePreferences = function (preferences) {
-    return accounts.updatePreferences.call(this, [this.accountId, preferences])
+    return accounts.updatePreferences.call(this, this.accountId, preferences)
 }
 
 /**
@@ -82,7 +82,7 @@ TDAccount.prototype.updatePreferences = function (preferences) {
  * @returns {Promise<any>} The susbscription keys
  */
 TDAccount.prototype.getStreamerSubscriptionKeys = function () {
-    return accounts.getStreamerSubscriptionKeys.call(this, [this.accountId])
+    return accounts.getStreamerSubscriptionKeys.call(this, this.accountId)
 }
 
 /**
@@ -96,7 +96,7 @@ TDAccount.prototype.getStreamerSubscriptionKeys = function () {
  * @returns {Promise<any>} List of orders
  */
 TDAccount.prototype.getOrders = function (params) {
-    return orders.getOrders.call(this, [this.accountId, params])
+    return orders.getOrders.call(this, this.accountId, params)
 }
 
 /**
@@ -107,7 +107,7 @@ TDAccount.prototype.getOrders = function (params) {
  * @returns {Promise<any>} The order details
  */
 TDAccount.prototype.getOrder = function (orderId) {
-    return orders.getOrder.call(this, [this.accountId, orderId])
+    return orders.getOrder.call(this, this.accountId, orderId)
 }
 
 /**
@@ -119,7 +119,7 @@ TDAccount.prototype.getOrder = function (orderId) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.placeOrder = function (order) {
-    return orders.placeOrder.call(this, [this.accountId, order])
+    return orders.placeOrder.call(this, this.accountId, order)
 }
 
 /**
@@ -132,7 +132,7 @@ TDAccount.prototype.placeOrder = function (order) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.replaceOrder = function (orderId, order) {
-    return orders.replaceOrder.call(this, [this.accountId, orderId, order])
+    return orders.replaceOrder.call(this, this.accountId, orderId, order)
 }
 
 /**
@@ -143,7 +143,7 @@ TDAccount.prototype.replaceOrder = function (orderId, order) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.cancelOrder = function (orderId) {
-    return orders.cancelOrder.call(this, [this.accountId, orderId])
+    return orders.cancelOrder.call(this, this.accountId, orderId)
 }
 
 /**
@@ -154,7 +154,7 @@ TDAccount.prototype.cancelOrder = function (orderId) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.createSavedOrder = function (savedOrder) {
-    return savedOrders.createSavedOrder.call(this, [this.accountId, savedOrder])
+    return savedOrders.createSavedOrder.call(this, this.accountId, savedOrder)
 }
 
 /**
@@ -165,7 +165,7 @@ TDAccount.prototype.createSavedOrder = function (savedOrder) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.deleteSavedOrder = function (savedOrderId) {
-    return savedOrders.deleteSavedOrder.call(this, [this.accountId, savedOrderId])
+    return savedOrders.deleteSavedOrder.call(this, this.accountId, savedOrderId)
 }
 
 /**
@@ -176,7 +176,7 @@ TDAccount.prototype.deleteSavedOrder = function (savedOrderId) {
  * @returns {Promise<any>} The saved order details
  */
 TDAccount.prototype.getSavedOrder = function (savedOrderId) {
-    return savedOrders.getSavedOrder.call(this, [this.accountId, savedOrderId])
+    return savedOrders.getSavedOrder.call(this, this.accountId, savedOrderId)
 }
 
 /**
@@ -186,7 +186,7 @@ TDAccount.prototype.getSavedOrder = function (savedOrderId) {
  * @returns {Promise<any>} List of saved orders
  */
 TDAccount.prototype.getSavedOrders = function () {
-    return savedOrders.getSavedOrders.call(this, [this.accountId])
+    return savedOrders.getSavedOrders.call(this, this.accountId)
 }
 
 /**
@@ -198,7 +198,7 @@ TDAccount.prototype.getSavedOrders = function () {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.replaceSavedOrder = function (savedOrderId, savedOrder) {
-    return savedOrders.replaceSavedOrder.call(this, [this.accountId, savedOrderId, savedOrder])
+    return savedOrders.replaceSavedOrder.call(this, this.accountId, savedOrderId, savedOrder)
 }
 
 /**
@@ -212,7 +212,7 @@ TDAccount.prototype.replaceSavedOrder = function (savedOrderId, savedOrder) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.createWatchlist = function (watchlist) {
-    return watchlists.createWatchlist.call(this, [this.accountId, watchlist])
+    return watchlists.createWatchlist.call(this, this.accountId, watchlist)
 }
 
 /**
@@ -223,7 +223,7 @@ TDAccount.prototype.createWatchlist = function (watchlist) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.deleteWatchlist = function (watchlistId) {
-    return watchlists.deleteWatchlist.call(this, [this.accountId, watchlistId])
+    return watchlists.deleteWatchlist.call(this, this.accountId, watchlistId)
 }
 
 /**
@@ -234,7 +234,7 @@ TDAccount.prototype.deleteWatchlist = function (watchlistId) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.getWatchlist = function (watchlistId) {
-    return watchlists.getWatchlist.call(this, [this.accountId, watchlistId])
+    return watchlists.getWatchlist.call(this, this.accountId, watchlistId)
 }
 
 /**
@@ -244,7 +244,7 @@ TDAccount.prototype.getWatchlist = function (watchlistId) {
  * @returns {Promise<any>} List of watchlists
  */
 TDAccount.prototype.getWatchlists = function () {
-    return watchlists.getWatchlists.call(this, [this.accountId])
+    return watchlists.getWatchlists.call(this, this.accountId)
 }
 
 /**
@@ -256,7 +256,7 @@ TDAccount.prototype.getWatchlists = function () {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.replaceWatchlist = function (watchlistId, watchlist) {
-    return watchlists.replaceWatchlist.call(this, [this.accountId, watchlistId, watchlist])
+    return watchlists.replaceWatchlist.call(this, this.accountId, watchlistId, watchlist)
 }
 
 /**
@@ -270,7 +270,7 @@ TDAccount.prototype.replaceWatchlist = function (watchlistId, watchlist) {
  * @returns {Promise<any>} Success
  */
 TDAccount.prototype.updateWatchlist = function (watchlistId, watchlist) {
-    return watchlists.updateWatchlist.call(this, [this.accountId, watchlistId, watchlist])
+    return watchlists.updateWatchlist.call(this, this.accountId, watchlistId, watchlist)
 }
 
 /**
@@ -281,7 +281,7 @@ TDAccount.prototype.updateWatchlist = function (watchlistId, watchlist) {
  * @returns {Promise<any>} The transaction details
  */
 TDAccount.prototype.getTransaction = function (transactionId) {
-    return transactions.getTransaction.call(this, [this.accountId, transactionId])
+    return transactions.getTransaction.call(this, this.accountId, transactionId)
 }
 
 /**
@@ -295,7 +295,7 @@ TDAccount.prototype.getTransaction = function (transactionId) {
  * @returns {Promise<any>} The transaction history
  */
 TDAccount.prototype.getTransactions = function (params) {
-    return transactions.getTransactions.call(this, [this.accountId, params])
+    return transactions.getTransactions.call(this, this.accountId, params)
 }
 
 module.exports = TDAccount
